@@ -1,16 +1,20 @@
-#implement{
-    margin-top: 150px;
-    margin-bottom: 10px;
+#simple{
+    padding: 140px 0;
+    background-image: url("../../../images/simple-bg.png");
+    background-repeat: no-repeat;
+    background-size: 390px;
+    background-position: right center;
 }
-.implement{
+.simple{
     width: 100%;
     @include display($direction:row, $items:center,$justify:space-between);
-    gap: 30px;
+    gap: 20px;
     &__image{
-        max-width: 445px;
+        max-width: 566px;
         width: 100%;
         & img{
-            width: 100%
+            width: 100%;
+            height: auto;
         }
     }
     &__content{
@@ -25,10 +29,22 @@
         @include textStyle($fs:15px,$fw:400, $lh:28px,$clr:$primary-color-50);
     }
 }
+@media (max-width:992px) {
+    .simple{
+        &__image{
+            max-width: 400px;
+        }
+    }
+}
 @media (max-width:768px) {
-    .implement{
-        flex-direction: column;
+    #simple{
+        padding: 100px 0;
+        background-image: none;
+    }
+    .simple{
+        flex-direction: column-reverse;
         text-align: center;
+        gap: 48px;
         &__image{
             & img{
                 height: auto;
@@ -40,7 +56,7 @@
     }
 }
 @media (max-width:576px) {
-    .implement{
+    .simple{
         gap: 48px;
         &__content{
             max-width: 100%;
