@@ -1,0 +1,55 @@
+#implement{
+    margin-top: 150px;
+    margin-bottom: 10px;
+}
+.implement{
+    width: 100%;
+    @include display($direction:row, $items:center,$justify:space-between);
+    gap: 30px;
+    &__image{
+        max-width: 445px;
+        width: 100%;
+        & img{
+            width: 100%;
+        // box-shadow: 25px 25px 80px 0px rgba(54, 83, 107, 1);
+
+        }
+    }
+    &__content{
+        max-width: 445px;
+        width: 100%;
+    }
+    &__title{
+        @include textStyle($fs:48px,$fw:400, $lh:56px, $clr:$primary-color);
+    }
+    &__text{
+        margin-top: 24px;
+        @include textStyle($fs:15px,$fw:400, $lh:28px,$clr:$primary-color-50);
+    }
+}
+@media (max-width:768px) {
+    .implement{
+        flex-direction: column;
+        text-align: center;
+        &__image{
+            & img{
+                height: auto;
+            }
+        }
+        &__content{
+            max-width: 573px;
+        }
+    }
+}
+@media (max-width:576px) {
+    .implement{
+        gap: 48px;
+        &__content{
+            max-width: 100%;
+        }
+        &__title{
+            font-size: 36px;
+            line-height: 36px;
+        }
+    }
+}
