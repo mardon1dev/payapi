@@ -2,7 +2,7 @@
     padding: 140px 0;
     background-image: url("../../../images/simple-bg.png");
     background-repeat: no-repeat;
-    background-size: 390px;
+    background-size: 390px center;
     background-position: right center;
 }
 .simple{
@@ -38,7 +38,7 @@
 }
 @media (max-width:768px) {
     #simple{
-        padding: 100px 0;
+        padding: 80px 0;
         background-image: none;
     }
     .simple{
