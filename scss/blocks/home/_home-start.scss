@@ -1,0 +1,27 @@
+#start{
+    padding: 96px 0;
+}
+.start{
+    @include display($direction:row, $items:center,$justify:space-between);
+    &__info{
+        max-width: 445px;
+        width: 100%;
+    }
+    &__title{
+        @include textStyle($fs:48px,$fw:400, $lh:56px, $clr:$primary-color);
+        word-wrap: break-word;
+    }
+    &__form{
+        position: relative;
+        max-width: 445px;
+        width: 100%;
+    }
+}
+
+@media (max-width:768px) {
+    .start{
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+}
