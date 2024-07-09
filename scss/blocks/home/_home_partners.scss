@@ -1,0 +1,111 @@
+#partners{
+    width: 100%;
+    background-color: rgba(27, 38, 47, 1);
+
+    background-image: url("../../../images/partner-bg.png");
+    background-repeat: no-repeat;
+    background-size: 545px 420px;
+    background-position: left top;
+}
+.partners{
+    width: 100%;
+    padding: 100px 0;
+    @include display($direction:row,$items:center, $justify:space-between);
+    gap: 20px;
+
+    &__content{
+        max-width: 445px;
+        @include display($direction:column,$items:flex-start, $justify:flex-start);
+    }
+    &__title{
+        @include textStyle($fs:48px,$fw:400, $lh:56px, $clr:$secondary-color)
+    }
+    &__text{
+        margin-top: 24px;
+        @include textStyle($fs:15px,$fw:400, $lh:28px,$clr:$secondary-color-70);
+    }
+    &__about{
+        margin-top: 32px;
+        display: inline-block;
+        position: relative;
+        @include button($paddingX:15px,$paddingY:25px, $brdrClr:$secondary-color,$txtClr:$secondary-color, $bfrClr:rgba(27, 38, 47, 1), $hvrTextClr:$primary-color, $actvTextClr:$secondary-color);
+        &:hover{
+            background-color: $secondary-color;
+        }
+    }
+    &__list{
+        max-width: 536px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-between;
+        grid-column-gap: 30px;
+        grid-row-gap: 39px;
+    }
+    &__item{
+        @include display($direction:column,$items:center, $justify:center);
+        color: $secondary-color;
+        cursor: pointer;
+        &:hover{
+            color: $btn-color;
+        }
+    }
+    &__item{
+        & svg{
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media (max-width:992px) {
+    .partners{
+        &__list{
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: space-around;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    #partners{    
+        background-image: url("../../../images/partner-bg-tablet.png");
+        background-size: 100% 230px;
+        background-position: top center;
+    }
+    .partners{
+        padding: 88px 0;
+        flex-direction: column-reverse;
+        gap: 64px;
+        &__content{
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        &__list{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media (max-width:576px) {
+    #partners{
+        background-image: url("../../../images/hero-bg-mobile.png");
+    }
+    .partners{
+        padding: 80px 0;
+        &__title{
+            font-size: 32px;
+            line-height: 34px;
+        }
+        &__text{
+            margin-top: 16px;
+        }
+        &__about{
+            margin-top: 60px;
+        }
+        &__list{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

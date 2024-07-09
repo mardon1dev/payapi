@@ -1,5 +1,6 @@
 #hero{
     padding-top: 162px;
+    padding-bottom: 100px;
     background-image: url("../../../images/hero-bg.png");
     background-repeat: no-repeat;
     background-size: 628px 640px;
@@ -37,50 +38,11 @@
         }
     }
     &__button{
+        @include button($paddingX:15px,$paddingY:25px,$brdrClr:$btn-color,$txtClr:$secondary-color, $bfrClr:$btn-color, $hvrTextClr:$btn-color, $actvTextClr:$secondary-color);
         position: absolute;
         right: 0;
         top: 0;
         height: 100%;
-        outline: none;
-        padding: 15px 25px;
-        border-radius: 99px;
-        border: 1px solid $btn-color;
-        box-shadow: 10px 10px 25px -10px #36536B40;
-        transition: all .3s linear;
-        overflow: hidden;
-        &--span{
-            position: relative;
-            z-index: 2;
-            @include textStyle($fs:15px, $fw:700, $lh:17px, $clr:$secondary-color);
-            transition: all .3s linear;
-        }
-        &::before{
-            content: " ";
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            margin: auto;
-            width: 100%;
-            height: 100%;
-            background-color: $btn-color;
-            border-radius: 99px;
-            transition: all .1s linear;
-            z-index: 1;
-        }
-        &:hover &--span{
-            color: $btn-color;
-        }
-        &:hover::before{
-            width: 0%;
-        }
-        &:active::before{
-            width: 100%;
-        }
-        &:active &--span{
-            color: $secondary-color;
-        }
     }
     &__text{
         padding-left: 27px;
